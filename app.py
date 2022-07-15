@@ -41,7 +41,7 @@ tokenizer = pickle.load(open('tokenizer.pickle', 'rb'))
 sequences = tokenizer.texts_to_sequences(sentence)
 padded = pad_sequences(sequences, maxlen=mxlen, padding='post', truncating= 'post')
 prediction_index = np.argmax(model.predict(padded)[0])
-count =0
+count =1 #helping us to control database rows number
 result = "{} That was a tone of {}".format(count,pre(prediction_index))
 
 
