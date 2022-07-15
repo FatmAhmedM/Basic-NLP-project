@@ -9,7 +9,7 @@ import sqlite3
 import pickle
 st.set_page_config(layout ="wide") 
 st.write('#Welcome to Text Emotion Analyzer')
-st.warning('You have only 10 times use, after the 10 try the result will be deleted')
+st.warning('You have only 10 times use, after the 10th try the result will be deleted')
 
 
 #database functions
@@ -43,10 +43,11 @@ padded = pad_sequences(sequences, maxlen=mxlen, padding='post', truncating= 'pos
 prediction_index = np.argmax(model.predict(padded)[0])
 count =0
 result = "{} That was a tone of {}".format(count,pre(prediction_index))
-remove_table()
-create_table()
+
+
 if st.button('Analyze'):  
     add_data(result)
+    remove_table()
     results = view_all_notes()
     count+=1
     col1, col2 = st.columns(2)
