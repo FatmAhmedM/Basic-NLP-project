@@ -56,5 +56,5 @@ if st.button('Analyze'):
             st.write('##' + i[0][1:]) #this [1:] for not showing the number which help us in remove_table() function
     with col2:	
         for i, result in enumerate(results):
-            i+1
+            i+=1
             st.write("This is the result number {}".format(i))
