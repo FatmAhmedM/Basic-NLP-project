@@ -29,8 +29,8 @@ def view_all_notes():
 	return data  
 
 
-def remove_table():
-  c.execute("DELETE FROM nlptable WHERE text_to_analyze like 11%  ") #delete the row that begin with 11
+#def remove_table():
+#  c.execute("DELETE FROM nlptable WHERE text_to_analyze like 11%  ") #delete the row that begin with 11
 
 create_table()
 mxlen =100
@@ -47,7 +47,7 @@ result = "{} That was a tone of {}".format(count,pre(prediction_index))
 
 if st.button('Analyze'):  
     add_data(result)
-    remove_table()
+    #remove_table()
     results = view_all_notes()
     count+=1
     col1, col2 = st.columns(2)
